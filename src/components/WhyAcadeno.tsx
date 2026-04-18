@@ -80,8 +80,8 @@ export default function WhyAcadeno() {
               className="why-card group relative bg-white rounded-xl sm:rounded-2xl p-5 sm:p-6 md:p-8 border border-[#1a365d10] shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-xl overflow-hidden"
               style={{ transitionDelay: `${index * 100}ms` }}
             >
-              {/* Large Background Number */}
-              <div className="absolute top-4 right-4 text-[7rem] font-black text-[#1a365d08] group-hover:text-[#1a365d0d] transition-colors duration-500 leading-none select-none pointer-events-none font-outfit">
+              {/* Large Background Number with Outline Effect */}
+              <div className="absolute top-4 right-4 text-[7rem] font-black text-blue-900/[0.04] group-hover:text-transparent group-hover:[-webkit-text-stroke:1px_rgba(59,130,246,0.4)] transition-all duration-700 leading-none select-none pointer-events-none font-outfit">
                 {reason.number}
               </div>
 

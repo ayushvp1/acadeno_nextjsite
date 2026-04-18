@@ -13,43 +13,43 @@ const countries = [
 
 export default function TrustBar() {
   return (
-    <div className="trust-bar-premium h-auto sm:h-[90px] flex flex-col sm:flex-row items-stretch bg-white border-y border-black/5 overflow-hidden relative dark:bg-[#0d121a] dark:border-white/5">
-      {/* Side Label */}
-      <div className="trust-label-container flex items-center px-4 sm:px-6 md:px-12 py-3 sm:py-0 relative z-10 bg-inherit whitespace-nowrap">
-        <span className="trust-label-text text-[#1e293b] text-[10px] sm:text-[11px] font-[900] uppercase tracking-[0.2em] sm:tracking-[0.25em] opacity-80 dark:text-white">
-          Trusted by clients across:
+    <div className="trust-bar-premium flex flex-col items-center bg-[#f8f9fd] border-y border-black/5 overflow-hidden relative py-6 sm:py-8">
+      {/* Centered Label */}
+      <div className="trust-label-container relative z-10 mb-6 sm:mb-8 text-center px-4">
+        <span className="trust-label-text text-[#1e293b]/60 text-[10px] sm:text-[11px] font-[900] uppercase tracking-[0.3em] sm:tracking-[0.4em]">
+          TRUSTED BY CLIENTS ACROSS:
         </span>
       </div>
 
       {/* Marquee Area */}
-      <div className="trust-marquee-container flex-1 relative flex items-center overflow-hidden h-[90px] sm:h-auto">
+      <div className="trust-marquee-container w-full relative flex items-center overflow-hidden h-[50px] sm:h-[60px]">
         <div
-          className="world-map-pattern absolute inset-0 opacity-[0.04] pointer-events-none dark:opacity-[0.07] dark:invert"
+          className="world-map-pattern absolute inset-0 opacity-[0.04] pointer-events-none"
           style={{
             backgroundImage: "url('https://www.transparenttextures.com/patterns/world-map.png')",
-            backgroundSize: "500px",
+            backgroundSize: "400px",
             backgroundRepeat: "repeat-x",
             backgroundPosition: "center"
           }}
         />
         <div className="premium-track-wrapper w-full overflow-hidden">
-          <div className="premium-track flex items-center gap-6 sm:gap-[50px] px-4 sm:px-[50px] animate-trust-scroll hover:[animation-play-state:paused] w-fit will-change-transform">
+          <div className="premium-track flex items-center gap-6 sm:gap-[60px] px-4 sm:px-[60px] animate-trust-scroll hover:[animation-play-state:paused] w-fit will-change-transform">
             {/* First Set */}
             {countries.map((country, idx) => (
-              <div key={`c1-${idx}`} className="country-pill flex items-center justify-center gap-2 sm:gap-3 py-2 sm:py-[10px] pl-2 sm:pl-[10px] pr-4 sm:pr-6 bg-white/90 backdrop-blur-md border border-black/5 rounded-full shadow-[0_4px_15px_rgba(0,0,0,0.05)] transition-all duration-300 hover:-translate-y-[3px] hover:bg-white hover:border-primary hover:shadow-[0_8px_25px_rgba(59,130,246,0.15)] dark:bg-slate-800/70 dark:border-white/10">
-                <div className="relative w-[30px] h-[30px] sm:w-[38px] sm:h-[38px] shrink-0 border-2 border-white rounded-full overflow-hidden">
+              <div key={`c1-${idx}`} className="country-pill flex items-center justify-center gap-2 sm:gap-4 transition-all duration-300 hover:scale-105">
+                <div className="relative w-[28px] h-[28px] sm:w-[34px] sm:h-[34px] shrink-0 border-2 border-white rounded-full overflow-hidden shadow-sm">
                   <img src={country.flag} alt={country.name} className="w-full h-full object-cover" />
                 </div>
-                <span className="pill-name text-[#1e293b] text-xs sm:text-sm font-bold dark:text-slate-200">{country.name}</span>
+                <span className="pill-name text-[#1e293b] text-[13px] sm:text-[15px] font-bold tracking-tight">{country.name}</span>
               </div>
             ))}
             {/* Duplicate for Loop */}
             {countries.map((country, idx) => (
-              <div key={`c2-${idx}`} className="country-pill flex items-center justify-center gap-2 sm:gap-3 py-2 sm:py-[10px] pl-2 sm:pl-[10px] pr-4 sm:pr-6 bg-white/90 backdrop-blur-md border border-black/5 rounded-full shadow-[0_4px_15px_rgba(0,0,0,0.05)] transition-all duration-300 hover:-translate-y-[3px] hover:bg-white hover:border-primary hover:shadow-[0_8px_25px_rgba(59,130,246,0.15)] dark:bg-slate-800/70 dark:border-white/10">
-                <div className="relative w-[30px] h-[30px] sm:w-[38px] sm:h-[38px] shrink-0 border-2 border-white rounded-full overflow-hidden">
+              <div key={`c2-${idx}`} className="country-pill flex items-center justify-center gap-2 sm:gap-4 transition-all duration-300 hover:scale-105">
+                <div className="relative w-[28px] h-[28px] sm:w-[34px] sm:h-[34px] shrink-0 border-2 border-white rounded-full overflow-hidden shadow-sm">
                   <img src={country.flag} alt={country.name} className="w-full h-full object-cover" />
                 </div>
-                <span className="pill-name text-[#1e293b] text-xs sm:text-sm font-bold dark:text-slate-200">{country.name}</span>
+                <span className="pill-name text-[#1e293b] text-[13px] sm:text-[15px] font-bold tracking-tight">{country.name}</span>
               </div>
             ))}
           </div>
@@ -59,16 +59,16 @@ export default function TrustBar() {
       <style jsx global>{`
         @keyframes trust-scroll {
           0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
+          100% { transform: translateX(calc(-50% - 30px)); }
         }
         .animate-trust-scroll {
-          animation: trust-scroll 30s linear infinite;
+          animation: trust-scroll 40s linear infinite;
           display: flex;
           width: max-content;
         }
         @media (max-width: 768px) {
           .animate-trust-scroll {
-            animation-duration: 20s;
+            animation-duration: 30s;
           }
         }
       `}</style>
