@@ -112,13 +112,13 @@ export default function Process() {
   }, []);
 
   return (
-    <section id="process" className="py-32 px-6 overflow-hidden bg-white relative">
+    <section id="process" className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 overflow-hidden bg-white relative">
       <div className="max-w-[1400px] mx-auto">
-        <div className="text-center mb-24 max-w-4xl mx-auto relative z-10">
-          <h2 className="text-4xl md:text-6xl font-black text-[#1a365d] mb-8 tracking-tight">
+        <div className="text-center mb-12 sm:mb-16 md:mb-24 max-w-4xl mx-auto relative z-10">
+          <h2 className="text-2xl sm:text-4xl md:text-6xl font-black text-[#1a365d] mb-4 sm:mb-6 md:mb-8 tracking-tight">
             From first conversation to live deployment.
           </h2>
-          <p className="text-xl md:text-2xl font-bold text-slate-500 max-w-2xl mx-auto">
+          <p className="text-lg sm:text-xl md:text-2xl font-bold text-slate-500 max-w-2xl mx-auto">
             Structured engagement designed for enterprise agility and clarity.
           </p>
         </div>
@@ -151,7 +151,7 @@ export default function Process() {
             {steps.map((step, idx) => (
               <div
                 key={step.id}
-                className={`flex items-center gap-12 lg:gap-24 w-full ${
+                className={`flex items-center gap-4 sm:gap-8 md:gap-12 lg:gap-24 w-full ${
                   idx % 2 === 0 ? 'flex-row' : 'flex-row-reverse text-right'
                 }`}
               >
@@ -166,10 +166,10 @@ export default function Process() {
 
                 {/* Content Box */}
                 <div className="flex-1 max-w-2xl">
-                  <div className={`p-8 md:p-12 bg-white rounded-3xl border border-slate-50 shadow-2xl shadow-slate-200/50 hover:shadow-blue-500/10 transition-all duration-500 group ${
+                  <div className={`p-5 sm:p-8 md:p-12 bg-white rounded-2xl sm:rounded-3xl border border-slate-50 shadow-2xl shadow-slate-200/50 hover:shadow-blue-500/10 transition-all duration-500 group ${
                     idx % 2 === 0 ? 'hover:-translate-x-2' : 'hover:translate-x-2'
                   }`}>
-                    <h3 className="text-2xl md:text-3xl font-black text-[#1a365d] mb-4 group-hover:text-blue-600 transition-colors">
+                    <h3 className="text-lg sm:text-2xl md:text-3xl font-black text-[#1a365d] mb-2 sm:mb-4 group-hover:text-blue-600 transition-colors">
                       {step.title}
                     </h3>
                     <p className="text-base md:text-lg font-bold text-slate-600 leading-relaxed">

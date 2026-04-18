@@ -5,13 +5,13 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0D0E14] text-white pt-24 pb-12 overflow-hidden">
-      <div className="max-w-[1700px] mx-auto px-6 md:px-10 mb-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12 lg:gap-8 items-start">
+    <footer className="bg-[#0D0E14] text-white pt-14 sm:pt-20 md:pt-24 pb-8 sm:pb-12 overflow-hidden">
+      <div className="max-w-[1700px] mx-auto px-4 sm:px-6 md:px-10 mb-12 sm:mb-16 md:mb-20">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 sm:gap-10 lg:gap-8 items-start">
           {/* Column 1: Brand */}
-          <div className="lg:col-span-2">
-            <div className="mb-8">
-              <div className="relative w-[300px] h-[72px] overflow-hidden">
+          <div className="col-span-2 sm:col-span-2 md:col-span-3 lg:col-span-2">
+            <div className="mb-6 sm:mb-8">
+              <div className="relative w-[220px] sm:w-[260px] md:w-[300px] h-[56px] sm:h-[64px] md:h-[72px] overflow-hidden">
                  {/* Full Horizontal Logo */}
                  <div className="absolute inset-0 h-full w-full">
                     <Image 
@@ -85,8 +85,8 @@ export default function Footer() {
           </div>
 
           {/* Column 5: Contact */}
-          <div>
-            <h2 className="text-[12px] font-semibold uppercase tracking-[0.2em] mb-8 text-slate-400 font-headline">Connect</h2>
+          <div className="col-span-2 sm:col-span-1">
+            <h2 className="text-[12px] font-semibold uppercase tracking-[0.2em] mb-5 sm:mb-8 text-slate-400 font-headline">Connect</h2>
             <ul className="space-y-4">
               <li>
                 <a href="tel:+914954600504" className="flex gap-4 group items-start">
@@ -162,8 +162,8 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-white/5 pt-8">
-        <div className="max-w-[1700px] mx-auto px-6 flex justify-center items-center">
+      <div className="border-t border-white/5 pt-6 sm:pt-8">
+        <div className="max-w-[1700px] mx-auto px-4 sm:px-6 flex justify-center items-center">
           <p className="text-slate-400 text-[11px] font-medium tracking-wide text-center uppercase">
             © {new Date().getFullYear()} ACADENO TECHNOLOGIES PRIVATE LIMITED SEZ. ALL RIGHTS RESERVED.
           </p>

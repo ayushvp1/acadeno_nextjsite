@@ -37,7 +37,7 @@ export default function AIFocus() {
     <section 
       id="what-we-do" 
       ref={sectionRef}
-      className="py-32 px-6 md:px-10 relative overflow-hidden bg-white min-h-[70vh] flex flex-col justify-center items-center"
+      className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 md:px-10 relative overflow-hidden bg-white min-h-[auto] sm:min-h-[60vh] md:min-h-[70vh] flex flex-col justify-center items-center"
     >
       {/* Background Grid */}
       <div 
@@ -53,19 +53,19 @@ export default function AIFocus() {
       />
 
       <div className="max-w-5xl mx-auto text-center relative z-20">
-        <h2 className="font-headline text-4xl md:text-6xl font-extrabold mb-16 text-[#191c1f] leading-tight tracking-tight px-4">
+        <h2 className="font-headline text-2xl sm:text-4xl md:text-6xl font-extrabold mb-8 sm:mb-12 md:mb-16 text-[#191c1f] leading-tight tracking-tight px-0 sm:px-4">
           AI integration into software that <br className="hidden md:block" /> already exists.
         </h2>
 
         <div className="relative inline-block w-full">
           {/* Layer 1: Blurred & Faded Text (Bottom) */}
-          <p className="text-xl md:text-3xl font-extrabold leading-[1.6] text-slate-400 blur-[3px] select-none opacity-60">
+          <p className="text-base sm:text-xl md:text-3xl font-extrabold leading-[1.6] text-slate-400 blur-[3px] select-none opacity-60">
             {content}
           </p>
 
           {/* Layer 2: Sharp & Dark Text (Top - Clipped) */}
           <p 
-            className="absolute inset-0 text-xl md:text-3xl font-extrabold leading-[1.6] text-[#1e293b]"
+            className="absolute inset-0 text-base sm:text-xl md:text-3xl font-extrabold leading-[1.6] text-[#1e293b]"
             style={{ 
               clipPath: `inset(0 ${100 - scanPos}% 0 0)`,
               transition: 'clip-path 0.1s ease-out'

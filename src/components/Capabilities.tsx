@@ -122,12 +122,12 @@ export default function Capabilities() {
   const [isPaused, setIsPaused] = useState(false);
 
   return (
-    <section id="capabilities" className="py-24 relative overflow-hidden bg-[#f8f9fd]">
-      <div className="max-w-7xl mx-auto px-6 mb-16 text-center">
-        <h2 className="font-headline text-4xl md:text-6xl font-extrabold text-[#191c1f] leading-tight">
+    <section id="capabilities" className="py-16 sm:py-20 md:py-24 relative overflow-hidden bg-[#f8f9fd]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 mb-10 sm:mb-16 text-center">
+        <h2 className="font-headline text-3xl sm:text-4xl md:text-6xl font-extrabold text-[#191c1f] leading-tight">
           What we engineer.
         </h2>
-        <p className="text-xl md:text-2xl font-bold text-slate-600 mt-6 md:max-w-2xl mx-auto">
+        <p className="text-lg sm:text-xl md:text-2xl font-bold text-slate-600 mt-4 sm:mt-6 md:max-w-2xl mx-auto">
           Sixteen service areas. One consistent standard of delivery.
         </p>
       </div>
@@ -254,6 +254,27 @@ export default function Capabilities() {
           color: #ffffff;
           font-weight: 700;
           text-align: center;
+        }
+        @media (max-width: 640px) {
+          .capability-card {
+            width: 220px;
+            height: 260px;
+            padding: 24px;
+            gap: 16px;
+          }
+          .capability-icon {
+            width: 56px;
+            height: 56px;
+          }
+          .capability-card h3 {
+            font-size: 15px;
+          }
+          .capability-overlay {
+            padding: 20px;
+          }
+          .capability-overlay p {
+            font-size: 13px;
+          }
         }
       `}</style>
     </section>

@@ -55,7 +55,7 @@ export default function WhyAcadeno() {
   }, []);
 
   return (
-    <section id="why-acadeno" className="py-24 relative overflow-hidden bg-[#fff9f5]">
+    <section id="why-acadeno" className="py-16 sm:py-20 md:py-24 relative overflow-hidden bg-[#fff9f5]">
       {/* Circuit Grid Background */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.05]">
         <div className="absolute top-0 left-0 w-full h-full" 
@@ -68,16 +68,16 @@ export default function WhyAcadeno() {
              }} />
       </div>
 
-      <div className="max-w-[1400px] mx-auto px-6 relative z-10">
-        <h2 className="text-4xl md:text-6xl font-black text-[#1a365d] mb-16 tracking-tight leading-tight">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 relative z-10">
+        <h2 className="text-2xl sm:text-4xl md:text-6xl font-black text-[#1a365d] mb-10 sm:mb-16 tracking-tight leading-tight">
           A different kind of technology partner.
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
           {reasons.map((reason, index) => (
             <div
               key={reason.number}
-              className="why-card group relative bg-white rounded-2xl p-8 border border-[#1a365d10] shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-xl overflow-hidden"
+              className="why-card group relative bg-white rounded-xl sm:rounded-2xl p-5 sm:p-6 md:p-8 border border-[#1a365d10] shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-xl overflow-hidden"
               style={{ transitionDelay: `${index * 100}ms` }}
             >
               {/* Large Background Number */}

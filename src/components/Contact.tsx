@@ -31,15 +31,15 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 px-6 max-w-7xl mx-auto relative z-20 mb-0">
+    <section id="contact" className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 max-w-7xl mx-auto relative z-20 mb-0">
       <div className="grid grid-cols-1 lg:grid-cols-2 bg-white rounded-3xl overflow-hidden shadow-2xl relative z-10 border border-[#c4c6d3]/20">
         
         {/* Left Column: Info */}
-        <div className="p-10 lg:p-16 bg-primary text-white">
+        <div className="p-6 sm:p-8 md:p-10 lg:p-16 bg-primary text-white">
           <span className="text-xs uppercase tracking-[0.2em] text-[#00BFEA] mb-4 block font-black">
             Let's Talk
           </span>
-          <h2 className="font-headline text-3xl md:text-5xl font-extrabold mb-8 leading-[1.1] text-white tracking-tight">
+          <h2 className="font-headline text-2xl sm:text-3xl md:text-5xl font-extrabold mb-6 sm:mb-8 leading-[1.1] text-white tracking-tight">
             Ready to make your <br /> systems smarter?
           </h2>
           <p className="font-body font-[600] text-white/90 mb-12 leading-relaxed text-base md:text-lg text-justify">
@@ -101,7 +101,7 @@ export default function Contact() {
         </div>
 
         {/* Right Column: Form */}
-        <div className="p-10 lg:p-20 bg-white relative z-10 flex flex-col justify-center">
+        <div className="p-6 sm:p-8 md:p-10 lg:p-20 bg-white relative z-10 flex flex-col justify-center">
           <form onSubmit={handleSubmit} className="space-y-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="space-y-3">
