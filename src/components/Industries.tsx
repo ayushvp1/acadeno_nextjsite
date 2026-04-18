@@ -38,6 +38,7 @@ const industries = [
 ];
 
 export default function Industries() {
+  const [isPaused, setIsPaused] = React.useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -59,7 +60,11 @@ export default function Industries() {
   }, []);
 
   return (
-    <section id="industries" className="py-16 sm:py-20 md:py-24 relative overflow-hidden bg-surface">
+    <section 
+      id="industries" 
+      className="py-16 sm:py-20 md:py-24 relative overflow-hidden bg-surface"
+      onClick={() => setIsPaused(false)}
+    >
       {/* Background Decorative Elements */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.03]">
         <div className="absolute top-0 left-0 w-full h-full" 
@@ -83,9 +88,19 @@ export default function Industries() {
 
         {/* Mobile/Tablet Autoscrolling Marquee */}
         <div className="lg:hidden w-full overflow-hidden py-4 -mx-4 px-4">
-          <div className="flex animate-marquee hover:[animation-play-state:paused] w-max gap-4 px-4">
+          <div 
+            className="flex animate-marquee w-max gap-4 px-4"
+            style={{ animationPlayState: isPaused ? 'paused' : 'running' }}
+          >
             {[...industries, ...industries, ...industries].map((industry, index) => (
-              <div key={`${industry.name}-mobile-${index}`} className="w-[180px] sm:w-[240px] shrink-0">
+              <div 
+                key={`${industry.name}-mobile-${index}`} 
+                className="w-[180px] sm:w-[240px] shrink-0"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setIsPaused(!isPaused);
+                }}
+              >
                 <IndustryCard industry={industry} index={index} isMobile />
               </div>
             ))}

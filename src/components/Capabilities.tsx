@@ -122,7 +122,14 @@ export default function Capabilities() {
   const [isPaused, setIsPaused] = useState(false);
 
   return (
-    <section id="capabilities" className="py-12 sm:py-16 md:py-20 relative overflow-hidden bg-[#f8f9fd]">
+    <section 
+      id="capabilities" 
+      className="py-12 sm:py-16 md:py-20 relative overflow-hidden bg-[#f8f9fd]"
+      onClick={() => {
+        setIsPaused(false);
+        setActiveCard(null);
+      }}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 mb-8 sm:mb-12 text-center">
         <h2 className="font-headline text-3xl sm:text-4xl md:text-6xl font-extrabold text-[#191c1f] leading-tight">
           What we engineer.
@@ -138,8 +145,7 @@ export default function Capabilities() {
           style={{ animationPlayState: isPaused ? 'paused' : 'running' }}
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => {
-            setIsPaused(false);
-            setActiveCard(null);
+            if (!activeCard) setIsPaused(false);
           }}
         >
           {/* First Set */}
@@ -147,9 +153,10 @@ export default function Capabilities() {
             <div 
               key={`set1-${idx}`}
               className={`capability-card group ${activeCard === idx ? 'mobile-tapped' : ''}`}
-              onClick={() => {
-                setActiveCard(idx);
-                setIsPaused(true);
+              onClick={(e) => {
+                e.stopPropagation();
+                setActiveCard(activeCard === idx ? null : idx);
+                setIsPaused(activeCard !== idx);
               }}
             >
               <img src={cap.icon} className="capability-icon" alt={cap.title} />
@@ -165,9 +172,11 @@ export default function Capabilities() {
             <div 
               key={`set2-${idx}`}
               className={`capability-card group ${activeCard === (idx + capabilities.length) ? 'mobile-tapped' : ''}`}
-              onClick={() => {
-                setActiveCard(idx + capabilities.length);
-                setIsPaused(true);
+              onClick={(e) => {
+                e.stopPropagation();
+                const currentIdx = idx + capabilities.length;
+                setActiveCard(activeCard === currentIdx ? null : currentIdx);
+                setIsPaused(activeCard !== currentIdx);
               }}
             >
               <img src={cap.icon} className="capability-icon" alt={cap.title} />

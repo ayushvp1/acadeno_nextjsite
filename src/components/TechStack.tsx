@@ -124,9 +124,15 @@ export default function TechStack() {
               const mid = Math.ceil(layer.items.length / 2);
               return (
                 <div key={idx} className="block-wrapper" style={{ zIndex: techStack.length - idx }}>
-                  {/* Vertical spine connector */}
-                  {idx > 0 && <div className="spine"></div>}
-
+                  {/* Vertical corner connectors (Dashed) */}
+                  {idx > 0 && (
+                    <div className="corner-connectors">
+                      <div className="vertical-line v-1"></div>
+                      <div className="vertical-line v-2"></div>
+                      <div className="vertical-line v-3"></div>
+                      <div className="vertical-line v-4"></div>
+                    </div>
+                  )}
                   <Link
                     href={layer.path}
                     className="block-link no-underline"
@@ -210,17 +216,32 @@ export default function TechStack() {
           position: relative;
         }
 
-        .spine {
+        .corner-connectors {
           position: absolute;
-          width: 1.5px;
-          background: #334e68;
+          width: 700px; /* match block-hit-area */
           height: 220px;
           top: -220px;
           left: 50%;
           transform: translateX(-50%);
-          opacity: 0.2;
+          pointer-events: none;
           z-index: -1;
         }
+
+        .vertical-line {
+          position: absolute;
+          width: 1.5px;
+          height: 220px;
+          background-image: linear-gradient(to bottom, #334e68 50%, transparent 50%);
+          background-size: 1px 12px;
+          opacity: 0.15;
+        }
+
+        /* Isometric corner positions for vertical lines */
+        /* These are calculated based on the 45deg/60deg isometric projection */
+        .v-1 { left: 50%; transform: translateX(-${size / 1.414}px); } /* Far left */
+        .v-2 { left: 50%; transform: translateX(${size / 1.414}px); }  /* Far right */
+        .v-3 { left: 50%; top: -30px; } /* Far top (center-ish in 2D) */
+        .v-4 { left: 50%; top: 30px; }  /* Far bottom (center-ish in 2D) */
 
         .block-hit-area {
           position: relative;
