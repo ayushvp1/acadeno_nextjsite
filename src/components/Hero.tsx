@@ -27,11 +27,11 @@ export default function Hero() {
       />
 
       <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-12 items-center relative z-10">
-        <div className="lg:col-span-8">
-          <h1 className="font-headline text-[2.25rem] sm:text-5xl md:text-7xl lg:text-8xl font-extrabold leading-[1.15] tracking-tight text-on-surface mb-4 sm:mb-6 md:mb-8">
+        <div className="lg:col-span-8 text-left">
+          <h1 className="font-headline text-[2.8rem] sm:text-5xl md:text-7xl lg:text-8xl font-extrabold leading-[1.1] tracking-tight text-on-surface mb-2 sm:mb-6 md:mb-8 text-left">
             Your software, <br />
             <span
-              className="text-[2.75rem] sm:text-6xl md:text-[90px] lg:text-[120px] inline-block pb-2 sm:pb-4 md:pb-8 bg-clip-text text-transparent animate-gradient-flow"
+              className="text-[3.5rem] sm:text-6xl md:text-[90px] lg:text-[120px] inline-block pb-2 sm:pb-4 md:pb-8 bg-clip-text text-transparent animate-gradient-flow"
               style={{
                 backgroundImage: 'linear-gradient(90deg, #00BFEA, #7B2FBE, #F05A22, #00BFEA)',
                 backgroundSize: '200% 100%'
@@ -41,11 +41,11 @@ export default function Hero() {
             </span>
           </h1>
 
-          <p className="text-base sm:text-lg md:text-xl font-bold text-on-surface/90 max-w-3xl mb-6 sm:mb-8 md:mb-10 leading-relaxed font-body">
+          <p className="text-base sm:text-lg md:text-xl font-bold text-on-surface/90 max-w-3xl mb-6 sm:mb-8 md:mb-10 leading-relaxed font-body text-left">
             We embed AI directly into the systems your business already runs — no replacements, no disruption, no starting over. Just measurably smarter operations from day one.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 sm:mb-10">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 sm:mb-10 justify-start">
             <Link href="/#contact" className="no-underline">
               <button className="px-8 sm:px-12 py-4 sm:py-5 bg-primary text-white font-extrabold rounded-xl text-base sm:text-lg hover:opacity-90 transition-all active:scale-95 text-center tracking-wide font-body w-full sm:w-auto">
                 Discuss Your Project
@@ -58,7 +58,7 @@ export default function Hero() {
             </Link>
           </div>
 
-          <div className="flex items-center justify-start">
+          <div className="flex items-center justify-center lg:justify-start">
             <div className="flex flex-col items-center px-4 sm:px-6 md:px-8 first:pl-0">
               <span className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-on-surface leading-none font-body">16+</span>
               <span className="text-[9px] sm:text-[10px] font-bold text-on-surface-variant uppercase tracking-widest mt-1 font-body">Service Areas</span>

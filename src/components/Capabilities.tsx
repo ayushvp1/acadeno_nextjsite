@@ -122,8 +122,8 @@ export default function Capabilities() {
   const [isPaused, setIsPaused] = useState(false);
 
   return (
-    <section id="capabilities" className="py-16 sm:py-20 md:py-24 relative overflow-hidden bg-[#f8f9fd]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 mb-10 sm:mb-16 text-center">
+    <section id="capabilities" className="py-12 sm:py-16 md:py-20 relative overflow-hidden bg-[#f8f9fd]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 mb-8 sm:mb-12 text-center">
         <h2 className="font-headline text-3xl sm:text-4xl md:text-6xl font-extrabold text-[#191c1f] leading-tight">
           What we engineer.
         </h2>
@@ -194,8 +194,8 @@ export default function Capabilities() {
         }
         .capability-card {
           flex: 0 0 auto;
-          width: 280px;
-          height: 320px;
+          width: 250px;
+          height: 290px;
           padding: 32px;
           display: flex;
           flex-direction: column;
@@ -206,6 +206,8 @@ export default function Capabilities() {
           position: relative;
           overflow: hidden;
           cursor: pointer;
+          isolation: isolate;
+          -webkit-mask-image: -webkit-radial-gradient(white, black);
           transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
         }
         .capability-card:hover {
@@ -213,8 +215,8 @@ export default function Capabilities() {
           box-shadow: 0 20px 40px -15px rgba(0,0,0,0.1);
         }
         .capability-icon {
-          width: 80px;
-          height: 80px;
+          width: 70px;
+          height: 70px;
           object-fit: contain;
           transition: transform 0.4s ease;
         }
@@ -241,6 +243,7 @@ export default function Capabilities() {
           transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
           transform: translateY(100%);
           z-index: 10;
+          border-radius: 24px;
           background: linear-gradient(135deg, #2563eb, #7c3aed, #db2777);
         }
         .capability-card:hover .capability-overlay,
@@ -257,14 +260,14 @@ export default function Capabilities() {
         }
         @media (max-width: 640px) {
           .capability-card {
-            width: 220px;
-            height: 260px;
-            padding: 24px;
-            gap: 16px;
+            width: 190px;
+            height: 230px;
+            padding: 20px;
+            gap: 12px;
           }
           .capability-icon {
-            width: 56px;
-            height: 56px;
+            width: 48px;
+            height: 48px;
           }
           .capability-card h3 {
             font-size: 15px;

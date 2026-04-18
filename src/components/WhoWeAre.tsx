@@ -50,18 +50,18 @@ export default function WhoWeAre() {
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 sm:gap-16 lg:gap-24 relative z-10">
         {/* Left Column: Narrative */}
-        <div className="lg:col-span-12 xl:col-span-7 text-center mx-auto">
-          <h2 className="font-headline text-3xl sm:text-4xl md:text-6xl font-extrabold text-[#191c1f] mb-4 sm:mb-6 tracking-[-0.02em] leading-tight text-center">
+        <div className="lg:col-span-12 xl:col-span-7 text-center xl:text-left">
+          <h2 className="font-headline text-3xl sm:text-4xl md:text-6xl font-extrabold text-[#191c1f] mb-4 sm:mb-6 tracking-[-0.02em] leading-tight">
             Who We Are
           </h2>
           
           <div className="space-y-6">
-            <p className="font-headline text-lg sm:text-2xl md:text-3xl font-extrabold text-[#191c1f] leading-tight mb-4 sm:mb-6 text-center">
+            <p className="font-headline text-lg sm:text-2xl md:text-3xl font-extrabold text-[#191c1f] leading-tight mb-4 sm:mb-6">
               We don't rebuild what works. <br />
               We make it work smarter.
             </p>
 
-            <div className="space-y-6 sm:space-y-10 text-center">
+            <div className="space-y-6 sm:space-y-10">
               <p className="font-body font-semibold text-base sm:text-lg md:text-xl leading-relaxed text-[#191c1f]/80">
                 Acadeno Technologies Private Limited is an enterprise software development and AI engineering company 
                 headquartered in Calicut, Keralam — operating from{" "}
