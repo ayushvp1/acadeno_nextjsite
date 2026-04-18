@@ -137,7 +137,7 @@ export default function Footer() {
               <div className="rounded-2xl overflow-hidden border border-white/5 shadow-lg relative group h-[160px]">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1956.549939491404!2d75.835075!3d11.2540626!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba65bcaf3c6a96d%3A0xfa10743fda00772f!2sAcadeno%20Technologies%20Private%20Limited%20-CSEZ%20Unit!5e0!3m2!1sen!2sin!4v1776069015511!5m2!1sen!2sin"
-                  className="w-full h-full grayscale invert opacity-50 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-700"
+                  className="w-full h-full opacity-80 group-hover:opacity-100 transition-all duration-700"
                   style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"
