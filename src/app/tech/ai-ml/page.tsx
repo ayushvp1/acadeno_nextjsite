@@ -31,6 +31,7 @@ export default function AiMlPage() {
                 src="/assets/tech_ai_ml_hero.png" 
                 alt="AI & Machine Learning" 
                 fill 
+                sizes="(max-width: 768px) 100vw, 40vw"
                 className="object-cover"
                 priority
               />

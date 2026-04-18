@@ -232,7 +232,7 @@ export default function TechStack() {
           cursor: pointer;
         }
 
-        .block-hit-area:hover {
+        .block-hit-area:hover, .block-hit-area:active {
           transform: translateY(-25px);
         }
 
@@ -322,7 +322,7 @@ export default function TechStack() {
           transition: all 0.3s ease;
         }
 
-        .tag:hover {
+        .tag:hover, .tag:active {
           background: #f8f9fd;
           transform: translateY(-2px);
         }
@@ -342,12 +342,14 @@ export default function TechStack() {
         @media (max-width: 768px) {
           .iso-stack { gap: 60px; }
           .spine { display: none; }
-          .block-hit-area { width: 100%; height: auto; transform: none !important; }
+          .block-hit-area { width: 100%; height: auto; transform: none !important; transition: transform 0.3s ease; }
+          .block-hit-area:active { transform: scale(0.98) !important; }
           .iso-cuboid { position: relative; width: 100%; height: auto; transform: none; left: auto; top: auto; margin: 0; }
-          .face { position: relative; transform: none !important; width: 100% !important; height: auto !important; padding: 25px !important; border-radius: 12px; margin-bottom: 2px; left: auto !important; top: auto !important; }
+          .face { position: relative; transform: none !important; width: 100% !important; height: auto !important; padding: 25px !important; border-radius: 12px; margin-bottom: 2px; left: auto !important; top: auto !important; transition: all 0.3s ease; }
           .heading { transform: none; font-size: 22px; width: auto; }
           .face.left, .face.right { border-top: 1.8px solid #1a365d; justify-content: center; }
           .tag-row { flex-wrap: wrap; justify-content: center; }
+          .tag { padding: 10px 18px; font-size: 14px; }
         }
       `}</style>
     </section>

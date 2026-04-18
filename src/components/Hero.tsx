@@ -82,6 +82,7 @@ export default function Hero() {
               src="/assets/finalhero.jpg" 
               alt="Abstract Neural Network Representation of Acadeno AI Integration" 
               fill 
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               className="object-cover"
               priority
             />

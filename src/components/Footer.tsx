@@ -18,6 +18,7 @@ export default function Footer() {
                       src="/assets/newlogo.png" 
                       alt="Acadeno logo" 
                       fill 
+                      sizes="(max-width: 768px) 50vw, 300px"
                       className="object-contain object-left pointer-events-none" 
                       style={{ clipPath: "inset(0 82% 0 0)" }}
                     />
@@ -25,6 +26,7 @@ export default function Footer() {
                       src="/assets/newlogo.png" 
                       alt="Acadeno text" 
                       fill 
+                      sizes="(max-width: 768px) 50vw, 300px"
                       className="object-contain object-left pointer-events-none" 
                       style={{ 
                         clipPath: "inset(0 0 0 18%)",

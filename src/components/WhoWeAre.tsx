@@ -98,6 +98,7 @@ export default function WhoWeAre() {
               src="/assets/pcb_circuit_macro.webp" 
               alt="Macro view of high-tech circuit board" 
               fill 
+              sizes="(max-width: 1280px) 0vw, 40vw"
               className="object-cover opacity-20 grayscale contrast-125 transition-transform duration-700 group-hover:scale-105"
             />
             

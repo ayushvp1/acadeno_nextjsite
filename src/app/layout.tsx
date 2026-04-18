@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Plus_Jakarta_Sans, Outfit } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
@@ -19,13 +19,22 @@ export const metadata: Metadata = {
   description: "Enterprise software development and AI engineering company.",
 };
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
+  themeColor: "#f8f9fd",
+  interactiveWidget: "resizes-visual",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${plusJakartaSans.variable} ${outfit.variable} antialiased`}>
+    <html lang="en" className={`${plusJakartaSans.variable} ${outfit.variable} antialiased`} data-scroll-behavior="smooth">
       <body className="font-body selection:bg-primary-fixed selection:text-primary overflow-x-hidden">
         <Navbar />
         {children}

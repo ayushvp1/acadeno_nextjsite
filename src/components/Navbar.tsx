@@ -13,7 +13,7 @@ export default function Navbar() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -55,6 +55,7 @@ export default function Navbar() {
                       src="/assets/newlogo.png" 
                       alt="Acadeno logo" 
                       fill 
+                      sizes="(max-width: 768px) 40vw, 260px"
                       className="object-contain object-left pointer-events-none" 
                       style={{ clipPath: "inset(0 70% 0 0)" }}
                     />
@@ -62,6 +63,7 @@ export default function Navbar() {
                       src="/assets/newlogo.png" 
                       alt="Acadeno text" 
                       fill 
+                      sizes="(max-width: 768px) 40vw, 260px"
                       className={`object-contain object-left pointer-events-none transition-all duration-300 nav-brand-text ${isScrolled ? "brightness-0 invert" : ""}`} 
                       style={{ clipPath: "inset(0 0 0 30%)" }}
                     />
@@ -74,6 +76,7 @@ export default function Navbar() {
                     src="/assets/logo_Title.png" 
                     alt="Acadeno symbol" 
                     fill
+                    sizes="64px"
                     className="object-contain object-left"
                   />
                 </div>
