@@ -95,7 +95,7 @@ export default function TechStack() {
   const depth = 80; // depth of the 3D box (height of side walls)
 
   return (
-    <section id="tech-stack" className="py-16 sm:py-24 md:py-48 bg-white relative overflow-hidden text-black">
+    <section id="tech-stack" className="py-16 sm:py-24 md:py-48 bg-white lg:bg-[#f1f5f9] relative overflow-hidden text-black">
       {/* Precision Blueprint Grid */}
       <div
         className="absolute inset-0 z-0 pointer-events-none opacity-[0.03]"
