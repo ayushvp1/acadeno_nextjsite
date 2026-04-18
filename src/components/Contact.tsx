@@ -101,7 +101,7 @@ export default function Contact() {
         </div>
 
         {/* Right Column: Form */}
-        <div className="p-6 sm:p-8 md:p-10 lg:p-20 bg-white relative z-10 flex flex-col justify-center">
+        <div id="contact-form" className="p-6 sm:p-8 md:p-10 lg:p-20 bg-white relative z-10 flex flex-col justify-center scroll-mt-20">
           <form onSubmit={handleSubmit} className="space-y-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="space-y-3">

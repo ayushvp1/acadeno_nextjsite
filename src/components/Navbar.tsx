@@ -284,7 +284,7 @@ export default function Navbar() {
             </div>
           </div>
 
-          <a href="/#contact" onClick={() => setIsMenuOpen(false)} className="flex items-center min-h-[48px] font-headline font-bold text-[#191c1f] hover:text-[#00286d] transition-colors text-base uppercase tracking-tight">Contact</a>
+          <a href="/#contact-form" onClick={() => setIsMenuOpen(false)} className="flex items-center min-h-[48px] font-headline font-bold text-[#191c1f] hover:text-[#00286d] transition-colors text-base uppercase tracking-tight">Contact</a>
         </div>
 
         <div className="p-6 border-t border-slate-100">
