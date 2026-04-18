@@ -125,6 +125,18 @@ const StatSphere = ({
         .sphere-cyan { background: radial-gradient(circle, #00BFEA 0%, transparent 70%); }
         .sphere-purple { background: radial-gradient(circle, #7B2FBE 0%, transparent 70%); }
         .sphere-orange { background: radial-gradient(circle, #F05A22 0%, transparent 70%); }
+        @media (max-width: 640px) {
+          .sphere-orb {
+            width: 160px;
+            height: 160px;
+          }
+          .sphere-number {
+            font-size: 44px;
+          }
+          .sphere-label {
+            font-size: 9px;
+          }
+        }
       `}</style>
     </div>
   );
@@ -132,7 +144,7 @@ const StatSphere = ({
 
 export default function Stats() {
   return (
-    <section className="relative py-32 overflow-hidden bg-white">
+    <section className="relative py-16 sm:py-24 md:py-32 overflow-hidden bg-white">
       {/* Circuit Grid Background */}
       <div 
         className="absolute inset-0 z-0 pointer-events-none opacity-[0.05]"
@@ -146,8 +158,8 @@ export default function Stats() {
         }}
       />
 
-      <div className="max-w-[1700px] mx-auto px-6 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-16 lg:gap-32">
+      <div className="max-w-[1700px] mx-auto px-4 sm:px-6 relative z-10">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-12 sm:gap-8 md:gap-16 lg:gap-32">
           
           <StatSphere 
             number="2025"

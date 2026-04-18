@@ -59,27 +59,27 @@ export default function Industries() {
   }, []);
 
   return (
-    <section id="industries" className="py-24 relative overflow-hidden bg-surface">
+    <section id="industries" className="py-16 sm:py-20 md:py-24 relative overflow-hidden bg-surface">
       {/* Background Decorative Elements */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.03]">
         <div className="absolute top-0 left-0 w-full h-full" 
              style={{ backgroundImage: 'radial-gradient(#1a365d 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
       </div>
 
-      <div className="max-w-[1400px] mx-auto px-6 relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-6xl font-black text-[#1a365d] mb-6 tracking-tight leading-tight">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 relative z-10">
+        <div className="text-center mb-10 sm:mb-16">
+          <h2 className="text-2xl sm:text-4xl md:text-6xl font-black text-[#1a365d] mb-4 sm:mb-6 tracking-tight leading-tight">
             Engineering intelligence for <br className="hidden md:block" /> the sectors that move the world.
           </h2>
           <div className="w-24 h-1.5 bg-gradient-to-r from-[#00BFEA] via-[#7B2FBE] to-[#F05A22] mx-auto rounded-full" />
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-6">
           {industries.map((industry, index) => (
             <Link
               key={industry.name}
               href={`/${industry.name.toLowerCase()}`}
-              className="industry-card-new group relative bg-white rounded-2xl p-8 border border-slate-100 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-xl overflow-hidden flex flex-col items-center text-center no-underline block"
+              className="industry-card-new group relative bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 border border-slate-100 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-xl overflow-hidden flex flex-col items-center text-center no-underline block"
               style={{ transitionDelay: `${index * 100}ms` }}
             >
               {/* Background Accent */}
@@ -89,21 +89,21 @@ export default function Industries() {
               />
               
               {/* Icon Container with Floating Effect */}
-              <div className="mb-8 relative transform group-hover:scale-110 transition-transform duration-500">
+              <div className="mb-4 sm:mb-6 md:mb-8 relative transform group-hover:scale-110 transition-transform duration-500">
                 <div className="absolute inset-0 blur-2xl opacity-20 group-hover:opacity-40 transition-opacity" style={{ backgroundColor: industry.color }}></div>
                 <img 
                   src={industry.icon} 
                   alt={industry.name}
-                  className="w-20 h-20 md:w-24 md:h-24 object-contain relative z-10"
+                  className="w-14 h-14 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain relative z-10"
                 />
               </div>
 
-              <h3 className="text-xl md:text-2xl font-black mb-4 transition-all duration-500"
+              <h3 className="text-base sm:text-xl md:text-2xl font-black mb-2 sm:mb-4 transition-all duration-500"
                   style={{ color: industry.color }}>
                 {industry.name}
               </h3>
 
-              <p className="text-sm font-bold text-slate-500 leading-relaxed group-hover:text-slate-700 transition-colors duration-500">
+              <p className="text-xs sm:text-sm font-bold text-slate-500 leading-relaxed group-hover:text-slate-700 transition-colors duration-500">
                 {industry.focus}
               </p>
 

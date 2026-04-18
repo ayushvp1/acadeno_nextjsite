@@ -95,7 +95,7 @@ export default function TechStack() {
   const depth = 80; // depth of the 3D box (height of side walls)
 
   return (
-    <section id="tech-stack" className="py-48 bg-white relative overflow-hidden text-black">
+    <section id="tech-stack" className="py-16 sm:py-24 md:py-48 bg-white relative overflow-hidden text-black">
       {/* Precision Blueprint Grid */}
       <div 
         className="absolute inset-0 z-0 pointer-events-none opacity-[0.03]"
@@ -108,12 +108,12 @@ export default function TechStack() {
         }}
       />
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="mb-48 text-center mx-auto">
-          <h2 className="font-headline text-4xl md:text-6xl font-extrabold text-[#191c1f] mb-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+        <div className="mb-12 sm:mb-24 md:mb-48 text-center mx-auto">
+          <h2 className="font-headline text-3xl sm:text-4xl md:text-6xl font-extrabold text-[#191c1f] mb-4 sm:mb-6">
             Our Technology Stack
           </h2>
-          <p className="text-xl md:text-2xl font-bold text-slate-500">
+          <p className="text-lg sm:text-xl md:text-2xl font-bold text-slate-500">
             Engineered for reliability. Precisely aligned.
           </p>
         </div>
@@ -340,15 +340,73 @@ export default function TechStack() {
         }
 
         @media (max-width: 768px) {
-          .iso-stack { gap: 60px; }
+          .iso-layout {
+            padding: 20px 0;
+          }
+          .iso-stack { 
+            gap: 20px; 
+            width: 100%;
+          }
           .spine { display: none; }
-          .block-hit-area { width: 100%; height: auto; transform: none !important; }
-          .iso-cuboid { position: relative; width: 100%; height: auto; transform: none; left: auto; top: auto; margin: 0; }
-          .face { position: relative; transform: none !important; width: 100% !important; height: auto !important; padding: 25px !important; border-radius: 12px; margin-bottom: 2px; left: auto !important; top: auto !important; }
-          .heading { transform: none; font-size: 22px; width: auto; }
-          .face.left, .face.right { border-top: 1.8px solid #1a365d; justify-content: center; }
-          .tag-row { flex-wrap: wrap; justify-content: center; }
+          .block-wrapper { width: 100%; }
+          .block-hit-area { 
+            width: 100%; 
+            height: auto; 
+            transform: none !important; 
+            min-height: auto;
+          }
+          .iso-cuboid { 
+            position: relative; 
+            width: 100%; 
+            height: auto; 
+            transform: none !important; 
+            left: auto; 
+            top: auto; 
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 1px;
+            background: #e2e8f0;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.1);
+          }
+          .face { 
+            position: relative !important; 
+            transform: none !important; 
+            width: 100% !important; 
+            height: auto !important; 
+            padding: 16px !important; 
+            border: none !important;
+            left: auto !important; 
+            top: auto !important; 
+            display: block !important;
+          }
+          .face.top {
+            padding: 20px 16px !important;
+          }
+          .heading { 
+            transform: none; 
+            font-size: 18px; 
+            width: 100%; 
+            text-align: left;
+          }
+          .face.left, .face.right { 
+            padding: 12px 16px !important;
+          }
+          .tag-row { 
+            display: flex;
+            flex-wrap: wrap; 
+            justify-content: flex-start;
+            gap: 8px;
+          }
+          .tag {
+            padding: 4px 10px;
+            font-size: 11px;
+            border-radius: 6px;
+          }
         }
+
       `}</style>
     </section>
   );

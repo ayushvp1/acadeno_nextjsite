@@ -19,6 +19,13 @@ export const metadata: Metadata = {
   description: "Enterprise software development and AI engineering company.",
 };
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5, // Allow some zooming for accessibility
+};
+
+
 export default function RootLayout({
   children,
 }: Readonly<{

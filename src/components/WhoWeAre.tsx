@@ -35,7 +35,7 @@ const GeoHighlight = ({ children, timezone, tooltip }: { children: React.ReactNo
 
 export default function WhoWeAre() {
   return (
-    <section id="about" className="py-24 px-6 md:px-10 max-w-[1700px] mx-auto relative overflow-hidden bg-white">
+    <section id="about" className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-10 max-w-[1700px] mx-auto relative overflow-hidden bg-white">
       {/* Blueprint Grid Background exactly as per style.css */}
       <div 
         className="absolute inset-0 z-0 pointer-events-none"
@@ -48,21 +48,21 @@ export default function WhoWeAre() {
         }}
       />
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 relative z-10">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 sm:gap-16 lg:gap-24 relative z-10">
         {/* Left Column: Narrative */}
         <div className="lg:col-span-12 xl:col-span-7">
-          <h2 className="font-headline text-4xl md:text-6xl font-extrabold text-[#191c1f] mb-6 tracking-[-0.02em] leading-tight">
+          <h2 className="font-headline text-3xl sm:text-4xl md:text-6xl font-extrabold text-[#191c1f] mb-4 sm:mb-6 tracking-[-0.02em] leading-tight">
             Who We Are
           </h2>
           
           <div className="space-y-6">
-            <p className="font-headline text-xl sm:text-2xl md:text-3xl font-extrabold text-[#191c1f] leading-tight mb-6">
+            <p className="font-headline text-lg sm:text-2xl md:text-3xl font-extrabold text-[#191c1f] leading-tight mb-4 sm:mb-6">
               We don't rebuild what works. <br />
               We make it work smarter.
             </p>
 
-            <div className="space-y-10 text-justify md:text-left">
-              <p className="font-body font-black text-lg md:text-xl leading-relaxed text-[#191c1f]">
+            <div className="space-y-6 sm:space-y-10 text-justify md:text-left">
+              <p className="font-body font-black text-base sm:text-lg md:text-xl leading-relaxed text-[#191c1f]">
                 Acadeno Technologies Private Limited is an enterprise software development and AI engineering company 
                 headquartered in Calicut, Keralam — operating from{" "}
                 <GeoHighlight timezone="Asia/Kolkata" tooltip="Calicut">
@@ -72,14 +72,14 @@ export default function WhoWeAre() {
                 one of India's most advanced SEZ technology hubs.
               </p>
 
-              <p className="font-body font-black text-lg md:text-xl leading-loose text-[#191c1f]">
+              <p className="font-body font-black text-base sm:text-lg md:text-xl leading-loose text-[#191c1f]">
                 Founded in 2025, we were built around a single, focused belief: that artificial intelligence should 
                 integrate into the tools your business already depends on — not replace them. Our team of specialists 
                 and architects works across industries and geographies to layer intelligence into existing software without 
                 the cost and complexity of rebuilding.
               </p>
 
-              <p className="font-body font-black text-lg md:text-xl leading-loose text-[#191c1f]">
+              <p className="font-body font-black text-base sm:text-lg md:text-xl leading-loose text-[#191c1f]">
                 We serve clients across the{" "}
                 <GeoHighlight timezone="America/New_York" tooltip="NY">USA</GeoHighlight>,{" "}
                 <GeoHighlight timezone="Europe/London" tooltip="London">UK</GeoHighlight>, 

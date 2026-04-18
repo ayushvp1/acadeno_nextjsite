@@ -11,12 +11,21 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
+      const scrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
+      setIsScrolled(scrollY > 20);
     };
-    window.addEventListener("scroll", handleScroll);
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("touchmove", handleScroll, { passive: true });
+    
     handleScroll();
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("touchmove", handleScroll);
+    };
   }, []);
+
+
 
   useEffect(() => {
     if (isMenuOpen) {
@@ -34,20 +43,21 @@ export default function Navbar() {
     <>
       <nav
         id="main-nav"
-        className={`fixed top-0 w-full z-[1000] backdrop-blur-md transition-all duration-300 h-[72px] md:h-[80px] ${
+        className={`fixed top-0 w-full z-[1000] backdrop-blur-md transition-all duration-300 h-[64px] sm:h-[72px] md:h-[80px] ${
           isScrolled 
             ? "bg-[#0d0e14] border-b border-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.4)]" 
             : "bg-white/95 border-b border-slate-100 shadow-sm"
         }`}
       >
-        <div className="flex justify-between items-center w-full px-6 md:px-10 max-w-[1700px] mx-auto h-full">
+        <div className="flex justify-between items-center w-full px-4 sm:px-6 md:px-10 max-w-[1700px] mx-auto h-full">
 
-          <div 
-            className="select-none flex-shrink-0 transition-all duration-700 ease-[cubic-bezier(0.19,1,0.22,1)]" 
-            style={{ width: isScrolled ? "62px" : "260px" }}
+          <div
+            className="select-none flex-shrink-0 transition-all duration-700 ease-[cubic-bezier(0.19,1,0.22,1)]"
+            style={{ width: isScrolled ? "48px" : "clamp(120px, 40vw, 200px)" }}
           >
+
             <Link href="/" className="flex items-center">
-              <div className="relative h-[64px] flex items-center overflow-hidden w-full transition-all duration-700">
+              <div className="relative h-[48px] sm:h-[56px] md:h-[64px] flex items-center overflow-hidden w-full transition-all duration-700">
                 {/* Full Horizontal Logo */}
                 <div className={`absolute inset-0 h-full w-full transition-all duration-700 transform origin-left ${isScrolled ? "opacity-0 -translate-x-5" : "opacity-100 translate-x-0"}`}>
                   <div className="relative w-full h-full">
@@ -185,26 +195,35 @@ export default function Navbar() {
           </div>
 
           {/* Mobile UI */}
-          <div className="lg:hidden flex items-center gap-2 h-full">
-            <button 
+          <div className="lg:hidden flex items-center gap-2 h-full relative z-[10001]">
+            <button
+              onPointerDown={() => setIsMenuOpen(true)}
               onClick={() => setIsMenuOpen(true)}
-              className="w-12 h-12 flex flex-col justify-center items-center gap-[6px] focus:outline-none bg-[#f2f3f7] rounded-lg active:scale-95 transition-transform"
+              aria-label="Open menu"
+              className={`w-12 h-12 flex flex-col justify-center items-center gap-[6px] focus:outline-none rounded-xl active:scale-95 transition-all duration-150 shadow-md border cursor-pointer touch-manipulation ${
+                isScrolled 
+                  ? "bg-[#1e293b] border-white/30" 
+                  : "bg-white border-slate-300"
+              }`}
             >
-              <span className="block w-6 h-[2px] bg-[#00286d] transition-all duration-300" />
-              <span className="block w-6 h-[2px] bg-[#00286d] transition-all duration-300" />
-              <span className="block w-6 h-[2px] bg-[#00286d] transition-all duration-300" />
+              <span className={`block w-6 h-[2.5px] rounded-full transition-all duration-300 ${isScrolled ? "bg-white" : "bg-[#191c1f]"}`} />
+              <span className={`block w-6 h-[2.5px] rounded-full transition-all duration-300 ${isScrolled ? "bg-white" : "bg-[#191c1f]"}`} />
+              <span className={`block w-6 h-[2.5px] rounded-full transition-all duration-300 ${isScrolled ? "bg-white" : "bg-[#191c1f]"}`} />
             </button>
           </div>
+
+
+
         </div>
       </nav>
 
       {/* Mobile Drawer */}
       <div 
-        className={`fixed inset-0 bg-slate-900/20 backdrop-blur-sm z-[1010] transition-opacity duration-300 ${isMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
+        className={`fixed inset-0 bg-slate-900/20 backdrop-blur-sm z-[1010] transition-all duration-300 ${isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"}`}
         onClick={() => setIsMenuOpen(false)}
       />
       <div 
-        className={`fixed top-0 right-0 w-[80%] max-w-sm h-[100dvh] bg-white shadow-2xl z-[1020] rounded-bl-[24px] flex flex-col transition-transform duration-400 ease-[cubic-bezier(0.16,1,0.3,1)] ${isMenuOpen ? "translate-x-0 pointer-events-auto" : "translate-x-full pointer-events-none"}`}
+        className={`fixed top-0 right-0 w-[85%] max-w-sm h-screen h-[100dvh] bg-white shadow-2xl z-[1020] rounded-bl-[32px] flex flex-col transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${isMenuOpen ? "translate-x-0 visible" : "translate-x-full invisible"}`}
       >
         <div className="p-6 flex justify-between items-center border-b border-slate-100">
           <span className="font-headline font-extrabold text-[#00286d] text-lg uppercase tracking-tight">Menu</span>
