@@ -69,7 +69,7 @@ export default function WhyAcadeno() {
       </div>
 
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 relative z-10">
-        <h2 className="text-2xl sm:text-4xl md:text-6xl font-black text-[#1a365d] mb-10 sm:mb-16 tracking-tight leading-tight">
+        <h2 className="text-2xl sm:text-4xl md:text-6xl font-black text-[#1a365d] mb-10 sm:mb-16 tracking-tight leading-tight text-center sm:text-left">
           A different kind of technology partner.
         </h2>
 
